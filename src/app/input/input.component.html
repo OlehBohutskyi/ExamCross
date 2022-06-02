@@ -1,0 +1,13 @@
+
+  <form [formGroup] = 'myForm' (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">x0</ion-label>
+      <ion-input type="text" formControlName = "x0"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">h</ion-label>
+      <ion-input type="text" formControlName = "h"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" [disabled]='!myForm.valid'>Submit</ion-button>
+  </form>

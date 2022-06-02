@@ -1,20 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header>
+</app-header>
+
+
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-content>
+      <strong>Завдання:</strong>
+      <p>Розробити сервіс для наближеного обчислення значення похідних елементарних функцій. Для пошуку похідної функції f (x) в точці x0 з кроком h можна скористатися формулою:<br>
+        f`(x)=((x0+h)-(x0-h))/(2*h)<br>
+        Реалізувати для трьох власних функцій. <br>
+        Функції:<br>
+        1. f(x)=(x-1)^2<br>
+        2. f(x)=(e)^2x<br>
+        3. f(x)=x-1
+       </p>
+  </ion-card-content>
+</ion-card>
+  <ion-card>
+      <ion-card-content>
+        <app-input (outputToMain)="recieveInput($event)"></app-input>
+        <strong *ngFor="let r of result; let i = index" [attr.data-index]="i">
+          Функція {{i+1}}: {{r}}<br>
+        </strong>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
